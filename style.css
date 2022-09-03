@@ -11,3 +11,13 @@
 .footer-height {
     height: 6rem;
 }
+
+@media only screen and (max-width: 576px) {
+    .custom-height {
+        height: 18rem;
+    }
+
+    .footer-height {
+        height: 5rem;
+    }
+}
