@@ -39,7 +39,7 @@ const loadNews = category_id => {
 }
 
 const displayNews = (data) => {
-
+    //total news found 
     const newsItemCount = document.getElementById('count');
     const noNews = document.getElementById('no-count');
     if (data.length === 0) {
@@ -49,11 +49,12 @@ const displayNews = (data) => {
     else {
         noNews.classList.add('d-none');
         newsItemCount.classList.remove('d-none');
-        newsItemCount.innerText = `${data.length} news are founded`;
+        newsItemCount.innerText = `${data.length} News Found`;
     }
     const cardDiv = document.getElementById('card-container');
     cardDiv.innerText = "";
 
+    //sort data by views
     let sort = data.sort((a, b) => {
         return b.total_view - a.total_view;
     });
@@ -69,7 +70,18 @@ const displayNews = (data) => {
 
                 </div>
                 <div class="card-footer">
-                <p class="card-text"> <img class="img-fluid custom-img" src="${news.author.img}"><small class="text-muted ms-2">${news.author.name ? news.author.name : "No Author Found"} <i class="fa-solid fa-eye ms-4"> ${news.total_view ? news.total_view : "No views"}</i><a class="ms-4" href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="loadDetail('${news._id}')">Details<i class="fa-solid fa-arrow-right-long "></i></a></small></p>
+                <p class="card-text">
+                <div class="d-flex justify-content-between">
+                <div>
+                     <img class="img-fluid custom-img" src="${news.author.img}">
+                     <small class="text-muted">${news.author.name ? news.author.name : "No Author Found"}</small>
+                </div>
+                <div class="mt-2">
+                    <i class="fa-solid fa-eye ms-4"></i>${news.total_view ? news.total_view : "No views"}
+                    <a class="ms-4" href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="loadDetail('${news._id}')"><i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+                </div>
+                </p>
 
 
                 </div>
