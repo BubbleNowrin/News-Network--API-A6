@@ -3,3 +3,11 @@
     width: 45px;
     border-radius: 50%;
 }
+
+.custom-height {
+    height: 13rem;
+}
+
+.footer-height {
+    height: 6rem;
+}

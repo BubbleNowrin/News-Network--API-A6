@@ -5,6 +5,7 @@ const loadCategory = () => {
     fetch(url)
         .then(res => res.json())
         .then(data => setCategory(data.data.news_category))
+        .catch(error => console.log(error));
 }
 const setCategory = (newsdata) => {
 
@@ -35,7 +36,7 @@ const loadNews = category_id => {
     fetch(url)
         .then(res => res.json())
         .then(data => displayNews(data.data))
-
+        .catch(error => console.log(error));
 }
 
 const displayNews = (data) => {
@@ -62,22 +63,22 @@ const displayNews = (data) => {
         const div = document.createElement('div');
         div.innerHTML = `
     <div class="col">
-        <div class="card h-100">
+        <div class="card">
             <img src="${news.image_url}" class="card-img-top" alt="...">
-                <div class="card-body">
+                <div class="card-body custom-height">
                     <h5 class="card-title">${news.title}</h5>
                     <p class="card-text">${news.details.length > 200 ? news.details.slice(0, 200) + '...' : news.details}</p>
 
                 </div>
-                <div class="card-footer">
+                <div class="card-footer footer-height">
                 <p class="card-text">
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-evenly">
                 <div>
                      <img class="img-fluid custom-img" src="${news.author.img}">
-                     <small class="text-muted">${news.author.name ? news.author.name : "No Author Found"}</small>
+                     <small class="text-muted">${news.author.name ? news.author.name : "No Author"}</small>
                 </div>
                 <div class="mt-2">
-                    <i class="fa-solid fa-eye ms-4"></i>${news.total_view ? news.total_view : "No views"}
+                    <i class="fa-solid fa-eye ms-4"></i> ${news.total_view ? news.total_view : "No views"}
                     <a class="ms-4" href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="loadDetail('${news._id}')"><i class="fa-solid fa-arrow-right-long"></i></a>
                 </div>
                 </div>
@@ -99,6 +100,7 @@ const loadDetail = newsId => {
     fetch(url)
         .then(res => res.json())
         .then(data => showDetails(data.data))
+        .catch(error => console.log(error));
 }
 
 const showDetails = (data) => {
