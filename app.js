@@ -39,6 +39,18 @@ const loadNews = category_id => {
 }
 
 const displayNews = (data) => {
+
+    const newsItemCount = document.getElementById('count');
+    const noNews = document.getElementById('no-count');
+    if (data.length === 0) {
+        noNews.classList.remove('d-none');
+        newsItemCount.classList.add('d-none');
+    }
+    else {
+        noNews.classList.add('d-none');
+        newsItemCount.classList.remove('d-none');
+        newsItemCount.innerText = `${data.length} news are founded`;
+    }
     const cardDiv = document.getElementById('card-container');
     cardDiv.innerText = "";
 
