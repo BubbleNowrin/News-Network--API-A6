@@ -56,11 +56,14 @@
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <strong>The main differences among var,let,const are </strong>var is functional scope.On the
+                        <strong>The main differences among var,let,const are </strong>1.var is functional scope.On the
                         other hand, let and const are block scoped.
-                        var can be updated and re-declared.let can be updated but cannot be re-declared.const cannot be
-                        updated or re-declared.var can be declared without initialization. let can be declared without
-                        initialization. const cannot be declared without initialization.
+                        2.var can be updated and can be declared again.let can be updated but cannot be
+                        re-declared.const
+                        cannot be
+                        updated nor can be declared again.
+                        3.var and let can be declared without initialization. const
+                        cannot be declared without initialization.
                     </div>
                 </div>
             </div>
@@ -74,13 +77,14 @@
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <strong>TUnderstanding the differences between regular and arrow functions helps choose the
-                            right syntax for specific needs.</strong> this value inside a regular function is dynamic
-                        and depends on the invocation. But this inside the arrow function is bound lexically and equals
-                        to this of the outer function.arguments object inside the regular functions contains the list of
-                        arguments. The arrow function, on the opposite, doesn't define arguments.If the arrow function
+                        <strong>The differences between regular function and arrow functions are</strong>1. 'this' value
+                        inside a regular function is dynamic.But 'this' inside the arrow function is bound lexically and
+                        equals
+                        to 'this' of the outer function.
+                        2.Inside the regular functions it contains the list of
+                        arguments.On the other hand, The arrow function, doesn't define arguments.If the arrow function
                         has
-                        one expression, then the expression is returned implicitly, even without using the return
+                        one expression, then it returns the expression, even without using the
                         keyword.
                     </div>
                 </div>
@@ -95,13 +99,16 @@
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <strong>differences between map,forEach & find,filter are as follows</strong> The forEach()
-                        method does not create a new array based on the given array. The map() method creates an
-                        entirely new array.The forEach() method returns “undefined“. The map() method returns the newly
-                        created array according to the provided callback function.The find() method is used to find all
-                        the descendant elements of the selected element. The filter() method is used to filter all the
-                        elements.The find() method search through all the child elements only.The filter() method search
-                        through all the elements
+                        <strong>differences between map,forEach & find,filter are as follows</strong>1.forEach()
+                        method does not create a new array.map() method creates a
+                        new array.
+                        2.forEach() method does not return anything.map() method returns the new array according to the
+                        conditions of the provided callback function.
+                        3.find() method is used to find all
+                        the descendant elements of the selected element.filter() method is used to filter all the
+                        elements.
+                        4.find() method only gives the first element that fulfills the condition.filter() method gives
+                        all the element that fulfills the conditions.
                     </div>
                 </div>
                 <div class="accordion-item">
@@ -114,15 +121,11 @@
                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <strong>Template literals are literals delimited with backtick (`) characters,</strong>
-                            allowing for multi-line strings, for string interpolation with embedded expressions, and for
-                            special constructs called tagged templates.
-
-                            Template literals are sometimes informally called template strings, because they are used
-                            most commonly for string interpolation (to create strings by doing substitution of
-                            placeholders). However, a tagged template literal may not result in a string; it can be used
-                            with a custom tag function to perform whatever operations you want on the different parts of
-                            the template literal.
+                            <strong>Template literals are literals with backtick (`) characters,</strong>it allows us to
+                            do multi-line code. It is usefull for string interpolation with embedded expressions.That's
+                            why it is informally called ase template strings as it is used to create strings by doing
+                            substitution of
+                            placeholders. We can handle the data dynamically with template strings.
                         </div>
                     </div>
                 </div>
