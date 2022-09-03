@@ -38,12 +38,13 @@ const loadNews = category_id => {
 }
 
 const displayNews = (data) => {
-
-
     const cardDiv = document.getElementById('card-container');
     cardDiv.innerText = "";
-    data.forEach(news => {
 
+    let sort = data.sort((a, b) => {
+        return b.total_view - a.total_view;
+    });
+    sort.forEach(news => {
         const div = document.createElement('div');
         div.innerHTML = `
     <div class="col">
